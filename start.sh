@@ -16,7 +16,4 @@ sudo iptables -A FORWARD -i $PRIV -o $PUB -j ACCEPT
 #sudo apt-get update
 sudo apt-get install isc-dhcp-server
 sudo cp dhcpd.conf /etc/dhcp/
-
-#sudo dhcpd -user dhcpd -group dhcpd -f -q -4 -pf /run/dhcp-server/dhcpd.pid -cf /etc/dhcp/dhcpd.conf $PRIV &
-sudo dhcpd eth1
-
+sudo dhcpd $PRIV
