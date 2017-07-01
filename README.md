@@ -50,7 +50,7 @@ Pour se connecter sur la machine virtuelle (dépannage):
 
 ``vagrant ssh``
 
-Plus d'info sur:
+# Plus d'info sur:
 
 [https://drive.google.com/open?id=18Ic35yOlgNIgdS_aGpk5hhW-4teGr2YIpg9byWMGiow](https://drive.google.com/open?id=18Ic35yOlgNIgdS_aGpk5hhW-4teGr2YIpg9byWMGiow)
 
