@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 # Petit script tout simple pour partager sa connexion Internet
-# zf170630.20.57
+# zf170701.0931
 # source: https://wiki.archlinux.org/index.php/Internet_sharing
 
 PUB=eth0
@@ -14,6 +14,7 @@ sudo iptables -A FORWARD -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
 sudo iptables -A FORWARD -i $PRIV -o $PUB -j ACCEPT
 
 #sudo apt-get update
-sudo apt-get install isc-dhcp-server
+sudo apt-get -y install isc-dhcp-server
 sudo cp dhcpd.conf /etc/dhcp/
 sudo dhcpd $PRIV
+ps ax |grep dhc
