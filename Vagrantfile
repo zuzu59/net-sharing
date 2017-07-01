@@ -40,14 +40,14 @@ $prov2 = <<SCRIPT
 SCRIPT
 
 config.vm.define "mach1" do |mach1|
-	mach1.vm.box = "ubuntu.trusty.server"
+	mach1.vm.box = "ubuntu/trusty32"
 	mach1.vm.provider "virtualbox" do |vb|
 	 # Display the VirtualBox GUI when booting the machine
 		 vb.gui = true
 	 # Customize the amount of memory on the VM:
 		 vb.memory = "400"
 	end
-	mach1.vm.network "public_network" , bridge: "en3: Ethernet Thunderbolt" , ip: "192.168.2.1"
+	mach1.vm.network "public_network" , bridge: "en2: Ethernet Thunderbolt" , ip: "192.168.2.1"
 	mach1.vm.hostname = "mach1"
 	mach1.vm.provision "shell", inline: $prov2
 	mach1.vm.provision :shell, path: "start.sh", run: 'always'
