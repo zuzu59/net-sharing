@@ -1,5 +1,5 @@
 # Le Vagrantfile simplifié à zuzu pour le net-sharing WIFI2FIXE
-# zf151029.1753, zf170701.1012
+# zf151029.1753, zf170704.0912
 
 #Script Vagrant qui permet de provisionner 1 machines Linux Ubuntu pour faire du net-sharing WIFI2FIXE
 
@@ -35,6 +35,7 @@ $prov2 = <<SCRIPT
 	echo copy net-sharing files...
 	cp /vagrant/dhcpd.conf .
 	cp /vagrant/start.sh .
+	cp /vagrant/dhcp-list.sh .
 
 	echo finished...
 SCRIPT
@@ -47,7 +48,7 @@ config.vm.define "mach1" do |mach1|
 	 # Customize the amount of memory on the VM:
 		 vb.memory = "400"
 	end
-	mach1.vm.network "public_network" , bridge: "en2: Ethernet Thunderbolt" , ip: "192.168.2.1"
+	mach1.vm.network "public_network" , bridge: "toto" , ip: "192.168.2.1"
 	mach1.vm.hostname = "mach1"
 	mach1.vm.provision "shell", inline: $prov2
 	mach1.vm.provision :shell, path: "start.sh", run: 'always'

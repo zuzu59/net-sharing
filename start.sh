@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 # Petit script tout simple pour partager sa connexion Internet
-# zf170701.0931
+# zf170704.0854
 # source: https://wiki.archlinux.org/index.php/Internet_sharing
 
 PUB=eth0
@@ -18,3 +18,5 @@ sudo apt-get -y install isc-dhcp-server
 sudo cp dhcpd.conf /etc/dhcp/
 sudo dhcpd $PRIV
 ps ax |grep dhc
+
+
